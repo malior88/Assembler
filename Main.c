@@ -1,7 +1,5 @@
 #include "Main.h"
 
-
-
 int main(int argc, char* argv[]) {
 
     if (argc < 2) {
@@ -11,7 +9,6 @@ int main(int argc, char* argv[]) {
         return 1;
 
     }
-
 
 
     /* Perform pre-assembly to handle macros (if any) */
@@ -53,7 +50,6 @@ int main(int argc, char* argv[]) {
     }
 
 
-
     /* Perform the second pass */
 
     CustomSecondPass(argv[1], output_prefix, symbol_head, decode_head);
@@ -63,8 +59,6 @@ int main(int argc, char* argv[]) {
     /* Clean up and free resources (e.g., symbol table and decode data) */
 
     
-
-
 
     return 0;
 

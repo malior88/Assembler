@@ -1,0 +1,43 @@
+CC = gcc
+
+CFLAGS = -Wall -O2 -g
+
+
+
+# Source files for the assembler
+
+ASSEMBLER_SRCS = Main.c SymbolTable.c Decode.c Pre_assembler.c SecondPass.c FirstPass.c
+
+
+
+# Object files for the assembler
+
+ASSEMBLER_OBJS = $(ASSEMBLER_SRCS:.c=.o)
+
+
+
+# Output binary name for the assembler
+
+ASSEMBLER = assembler
+
+
+
+# Default rule: build the assembler
+
+all: $(ASSEMBLER)
+
+
+
+# Compile the assembler into its executable
+
+$(ASSEMBLER): $(ASSEMBLER_OBJS)
+
+	$(CC) $(CFLAGS) $^ -o $@
+
+
+
+# Clean up the assembler executable and object files
+
+clean:
+
+	rm -f $(ASSEMBLER) $(ASSEMBLER_OBJS)
